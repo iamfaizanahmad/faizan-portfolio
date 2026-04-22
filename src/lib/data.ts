@@ -46,6 +46,12 @@ export const highlights = [
     detail:
       "Wired PostgreSQL → tRPC → Zod → SvelteKit-superforms → UI, eliminating hand-rolled API clients and validation drift at the boundary.",
   },
+  {
+    metric: "13",
+    label: "Clinical modules inside one EHR",
+    detail:
+      "Architected and led a 597-file, 75K+ line TypeScript EHR platform — patient records, multi-provider scheduling, insurance claims, denial management, compliance PDF generation, and MIPS reporting — across a multi-tenant practice environment.",
+  },
 ];
 
 export const experience = [
@@ -76,17 +82,19 @@ export const experience = [
     period: "Jan 2022 — Present",
     region: "United States · Remote",
     owned:
-      "Technical direction across a multi-provider EHR platform serving US-based clinics.",
+      "Technical direction across a 597-file TypeScript EHR platform — 13 clinical modules covering patient records, scheduling, billing, claims, compliance, and reporting for multi-tenant US medical practices.",
     challenges: [
-      "Translating clinical and operational requirements into scalable technical solutions.",
-      "Balancing delivery speed against long-term maintainability in a regulated domain.",
-      "Leading a cross-functional team through complex engineering trade-offs.",
+      "Modelling complex patient-record relationships — medications, vitals, authorizations, referrals, and billing — without letting the data model drift into a monolith.",
+      "Insurance claims and denial management with automated reconciliation across multiple payers.",
+      "Compliance PDF generation (superbills, patient statements, MIPS reports) that has to be exactly right in a regulated domain.",
+      "FullCalendar-based multi-provider scheduling with resource views, recurrence rules, and real-time appointment state.",
     ],
     impact: [
-      "Aligned engineering with long-term product vision through architectural reviews.",
-      "Process and tooling improvements that reduced operational overhead and raised team throughput.",
+      "13 production clinical modules shipped: patient management, scheduling, billing, claims, reports, MIPS, orders, fax inbox, and more.",
+      "Multi-tenant architecture supporting multiple independent practices from a single deployment.",
+      "Process and tooling improvements that measurably reduced operational overhead and raised team throughput.",
     ],
-    stack: ["React", "Node.js", "PostgreSQL", "Redis"],
+    stack: ["React", "TypeScript", "Ant Design", "FullCalendar", "Node.js", "PostgreSQL", "Redis", "pdfmake"],
   },
   {
     company: "glasc.io",
@@ -179,15 +187,15 @@ export const projects = [
     name: "Aquila EHR",
     tagline: "Multi-practice electronic health record platform",
     problem:
-      "US clinics needed a multi-provider EHR covering scheduling and patient management — where clinical workflows drive the data model and compliance drives everything else.",
+      "US medical practices needed a single platform covering the full care cycle — patient intake, clinical documentation, multi-provider scheduling, insurance billing, denial management, and compliance reporting — without any of those domains bleeding into each other.",
     design:
-      "React on a Node.js + Postgres + Redis core, organized around clinical workflows rather than CRUD surfaces. Modular practice-level tenancy; architectural reviews gate data-model changes.",
+      "597 TypeScript files across 13 feature modules, each with isolated routing and data concerns. Custom REST abstraction (Robin) for consistent API contracts. FullCalendar with resource and recurrence views drives scheduling. pdfmake handles compliance document generation (superbills, MIPS reports, patient statements). Multi-tenant by design — practiceId scopes every query.",
     contribution:
-      "Technical lead. I own technical direction, architectural decisions, and translation of clinical requirements into maintainable systems.",
-    scale: "Multi-practice · multi-provider · US clinics",
+      "Technical lead owning the full architecture: data modelling, module boundaries, billing and claims flows, scheduling implementation, PDF generation utilities, and the team's engineering process.",
+    scale: "13 clinical modules · 597 files · multi-tenant US practices",
     outcome:
-      "Engineering aligned with long-term product vision; process and tooling improvements that measurably raised throughput.",
-    stack: ["React", "Node.js", "Postgres", "Redis"],
+      "A production EHR serving multi-practice environments with insurance claims automation, compliance PDF generation, and a scheduling system built to handle provider-level resource conflicts.",
+    stack: ["React", "TypeScript", "Ant Design", "FullCalendar", "Node.js", "PostgreSQL", "Redis", "pdfmake"],
     period: "Jan 2022 — Present",
   },
   {
@@ -241,7 +249,11 @@ export const skills = [
   },
   {
     group: "Tools & Practices",
-    items: ["System design", "RFC process", "Code review", "Technical mentorship", "Agile / Scrum", "Claude API", "Cursor", "GitHub Copilot"],
+    items: ["System design", "RFC process", "Code review", "Technical mentorship", "Agile / Scrum", "Sprint planning"],
+  },
+  {
+    group: "AI Tooling",
+    items: ["Claude API", "GitHub Copilot", "Cursor", "AI-assisted code review", "Prompt engineering"],
   },
 ];
 
