@@ -4,7 +4,7 @@ export const profile = {
   location: "Islamabad, Pakistan — Remote",
   email: "faizann.ahmad1@gmail.com",
   github: "https://github.com/iamfaizanahmad",
-  linkedin: "https://linkedin.com/in/faizan-ahmad-009",
+  linkedin: "https://www.linkedin.com/in/iamfaizanahmad",
   resumeUrl: "/Faizan_Ahmad_Resume.pdf",
   tagline:
     "I design and ship real-time web systems at scale — from telemetry platforms streaming off 1,000+ vehicles to production-grade SvelteKit and React architectures that don't buckle under load.",

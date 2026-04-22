@@ -6,7 +6,7 @@ export function Contact() {
   const links = [
     { label: "Email", value: profile.email, href: `mailto:${profile.email}`, Icon: Mail },
     { label: "GitHub", value: "@iamfaizanahmad", href: profile.github, Icon: Github },
-    { label: "LinkedIn", value: "faizan-ahmad-009", href: profile.linkedin, Icon: Linkedin },
+    { label: "LinkedIn", value: "iamfaizanahmad", href: profile.linkedin, Icon: Linkedin },
   ];
 
   return (
